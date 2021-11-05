@@ -24,19 +24,22 @@
       // Add iframe to body
       document.body.appendChild(iframe);
       // Add zoom button to iframe
-     
+      var zoom = document.createElement("SPAN");
+      zoom.innerHTML= "<a href='"+iframe.orgsrc+"&width=1900&height=900'>&nbsp;↖&nbsp;</a>";
+      document.body.appendChild(zoom);
+      iframe.zoom= zoom;
     }
     function onLoad() {
       // Call addIFrame with (1) ThingSpeak channel number, (2) ThingSpeak field number, (3) desired graph color, and (4) number of samples in graph. 
       // All parameters are strings.
       // Color hint: red="d62020" (ThingSpeak default), blue="4189f4", yellow="f4d442", green="249600", amsgrey="46555f"
-      addIFrame("616801","1","f4d442","1200"); // ENS210.H [may be changed]
-     // addIFrame("320672","1","249600","1200"); // ENS220.P [may be changed]
-     // addIFrame("249563","1","f4d442","1200"); // ENS210.T [may be changed]
+      addIFrame("471508","2","f4d442","1200"); // ENS210.H [may be changed]
+      addIFrame("471508","1","249600","1200"); // ENS220.P [may be changed]
+      addIFrame("471508","3","46555f","1200"); // ENS210.T [may be changed]
    // addIFrame("320672","2","249600","1200"); // ENS220.T [may be changed]
-     // addIFrame("381884","1","46555f", "600"); // iAQcore.CO2 [may be changed]
+   //   addIFrame("381884","1","46555f", "600"); // iAQcore.CO2 [may be changed]
       // Set page title (although page is supposed to be shown 'full screen'/F11)
-      document.title = "Съдържание на формалдехид във въздуха (PPM)"     // [may be changed]
+      document.title = "Велико Търново съдържание във въздуха на NO2, CO и летливи органични съединения в PPM"     // [may be changed]
       // Force iframes to correct size
       onResize();
     }
@@ -69,6 +72,7 @@
       }
     }
     </SCRIPT>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </HEAD>
   <BODY ONLOAD="onLoad()" ONRESIZE="onResize()">
     <!-- onLoad() creates IFRAME elements -->
